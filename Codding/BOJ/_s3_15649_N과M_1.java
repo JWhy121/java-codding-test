@@ -3,10 +3,9 @@ package Codding.BOJ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Iterator;
 import java.util.StringTokenizer;
 
-public class _s3_15649_N과M {
+public class _s3_15649_N과M_1 {
 
     private static boolean[] visited;
     private static int[] arr;
@@ -39,14 +38,11 @@ public class _s3_15649_N과M {
     private static void backtracking(int depth){
 
         if(depth == M){
-
             for(int val : arr){
                 sb.append(val + " ");
             }
-
             sb.append("\n");
             return;
-
         }
 
         for(int i = 0; i < N; i++){
