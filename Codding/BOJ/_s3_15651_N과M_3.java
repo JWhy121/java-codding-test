@@ -25,13 +25,13 @@ public class _s3_15651_N과M_3 {
 
         arr = new int[M];
 
-        backtracking(1, 0);
+        backtracking(0);
 
         System.out.println(sb);
 
     }
 
-    private static void backtracking(int cur, int depth){
+    private static void backtracking(int depth){
 
         if(depth == M){
 
@@ -47,7 +47,7 @@ public class _s3_15651_N과M_3 {
         for(int i = 1; i < N + 1; i++){
 
             arr[depth] = i;
-            backtracking(i + 1, depth + 1);
+            backtracking(depth + 1);
         }
 
     }
