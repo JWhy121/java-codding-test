@@ -1,4 +1,4 @@
-package Codding.BOJ;
+package Codding.BOJ.silver;
 
 import java.io.*;
 import java.util.ArrayDeque;

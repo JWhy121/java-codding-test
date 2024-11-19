@@ -1,4 +1,4 @@
-package Codding.BOJ;
+package Codding.BOJ.bronze;
 
 import java.io.*;
 
