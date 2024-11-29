@@ -1,7 +1,6 @@
 package Codding.BOJ.silver;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 /*
 4를 1,2,3의 합
@@ -62,7 +61,7 @@ dp로 풀기(Memoization)
 dp[n] = dp[n-1] + dp[n-2] + dp[n-3]
  */
 
-public class _s3_9095_123_더하기_dp {
+public class _s3_9095_123_더하기_dp_해설 {
 
     private static int N;
     public static void main(String[] args) throws IOException{
