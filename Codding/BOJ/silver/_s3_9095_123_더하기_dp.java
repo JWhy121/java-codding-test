@@ -64,11 +64,7 @@ dp[n] = dp[n-1] + dp[n-2] + dp[n-3]
 
 public class _s3_9095_123_더하기_dp {
 
-    private static int T;
     private static int N;
-    private static int M;
-    private static StringTokenizer st;
-    private static int count = 0;
     public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
