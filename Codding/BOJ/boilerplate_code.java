@@ -6,8 +6,8 @@ import java.util.*;
 public class boilerplate_code {
 
     private static int T;
-    private static int N;
     private static int M;
+    private static int N;
     private static StringTokenizer st;
     public static void main(String[] args) throws IOException{
 
