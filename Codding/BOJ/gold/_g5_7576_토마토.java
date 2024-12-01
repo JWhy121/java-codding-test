@@ -39,9 +39,8 @@ public class _g5_7576_토마토 {
         visited = new boolean[M][N];
         ArrayDeque<int[]> queue = new ArrayDeque<>();
 
-
-
         int days = 0;
+        int tomatos = 0;
 
         for(int i = 0; i < M; i++){
             st = new StringTokenizer(br.readLine());
@@ -53,57 +52,43 @@ public class _g5_7576_토마토 {
                 }
                 if(arr[i][j] == -1)
                     visited[i][j] = true;
+                if(arr[i][j] == 0)
+                    tomatos++;
+
             }
         }
 
-        while(true){
+        while(tomatos > 0 && !queue.isEmpty()){
 
-            while (!queue.isEmpty()){
-
-                int[] now = queue.pollFirst();
+            for(int i = queue.size(); i > 0; i--){
+                int[] now = queue.poll();
 
                 visited[now[0]][now[1]] = true;
 
                 //4방향 돌면서 유효한 곳이고 0이면 1로 바꾸기
-                for(int i = 0; i < 4; i++){
-                    int nx = now[0] + dx[i];
-                    int ny = now[1] + dy[i];
+                for(int j = 0; j < 4; j++){
+                    int nx = now[0] + dx[j];
+                    int ny = now[1] + dy[j];
                     //유효한 부분이고
                     if(isValid(nx, ny)){
                         //0이라면 1로 바꾸고 tomato--
                         if(arr[nx][ny] == 0){
                             arr[nx][ny] = 1;
+                            tomatos--;
+                            queue.add(new int[]{nx, ny});
                         }
                     }
                 }
             }
 
             days++;
-
-            for(int i = 0; i < M; i++){
-                for(int j = 0; j < N; j++){
-                    if(arr[i][j] == 1 && !visited[i][j]){
-                        queue.add(new int[]{i, j});
-                    }
-                }
-            }
-
-            if(queue.isEmpty())
-                break;
         }
 
-        for(int i = 0; i < M; i++){
-            for(int j = 0; j < N; j++){
-                if(arr[i][j] == 0){
-                    days = 0;
-                    break;
-                }
-            }
-        }
+        if(tomatos == 0){
+            bw.write(days + "");
+        }else
+            bw.write(-1 + "");
 
-
-
-        bw.write(String.valueOf(days - 1));
         bw.flush();
         bw.close();
 
