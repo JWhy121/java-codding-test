@@ -40,25 +40,10 @@ public class _s1_1931_회의실_배정 {
         //처음 넣은 0행의 끝나는 시간 저장
         int end = arr[0][1];
 
-        //for문을 타는 지 안 타는 지 결정(for문을 안타면 더이상 회의실 배정 불가능하므로 while문 종료)
-        boolean flag = false;
-
-        while (true){
-
-            if(flag)
-                break;
-
-            flag = true;
-
-
-            for(int i = start; i < N; i++){
-                if(arr[i][0] >= end){
-                    count++;
-                    start = i + 1;
-                    end = arr[i][1];
-                    flag = false;
-                    break;
-                }
+        for(int i = 1; i < N; i++){
+            if(arr[i][0] >= end){
+                count++;
+                end = arr[i][1];
             }
         }
         bw.write(String.valueOf(count));
